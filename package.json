@@ -1,0 +1,24 @@
+{
+  "name": "express-sqlite-image-hosting-anime-fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "finnstrom3693",
+  "type": "commonjs",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9",
+    "sharp": "^0.33.5",
+    "sqlite3": "^5.1.7"
+  }
+}

@@ -1,0 +1,26 @@
+-- Enable foreign key constraints
+PRAGMA foreign_keys = ON;
+
+-- Create users table with INTEGER primary key (auto-increment)
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL
+);
+
+-- Create images table with INTEGER primary key (auto-increment)
+CREATE TABLE images (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT DEFAULT 'Untitled',
+    description TEXT,
+    tags TEXT,
+    orientation TEXT CHECK (orientation IN ('landscape', 'portrait', 'square', 'unknown')),
+    filename TEXT NOT NULL,
+    url TEXT NOT NULL,
+    user_id INTEGER NOT NULL,
+    username TEXT NOT NULL,
+    created_at TEXT DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+

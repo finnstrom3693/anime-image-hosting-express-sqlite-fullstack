@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card-header bg-primary text-white">
+                <h1 class="text-center">Welcome to Anime Image Hosting</h1>
+            </div>
+            <div class="card-body">
+                <div class="p-4 text-center">
+                    <p class="lead">Share and discover your favorite anime images!</p>
+                    <div class="mt-4">
+                        <% if (locals.user) { %>
+                            <a href="/upload" class="btn btn-primary btn-lg">Upload Image</a>
+                            <a href="/images" class="btn btn-outline-primary btn-lg ms-2">Browse Gallery</a>
+                        <% } else { %>
+                            <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+                            <a href="/login" class="btn btn-outline-primary btn-lg ms-2">Login</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
